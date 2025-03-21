@@ -1,14 +1,16 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
-import AdminUser from "./admin_user.js";
-import Room from "./Room.js";
-import Booking from "./Booking.js";
+
 
 const Hotel = sequelize.define("Hotel", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   address: {
     type: DataTypes.STRING,
@@ -37,6 +39,5 @@ const Hotel = sequelize.define("Hotel", {
     allowNull: true,
   },
 });
-
 
 export default Hotel;

@@ -1,8 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
-import Hotel from "./Hotel.js";
-import Room from "./Room.js";
-import ClientUser from "./client_user.js";
+
 
 const Booking = sequelize.define("Booking", {
   id: {

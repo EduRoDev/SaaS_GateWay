@@ -1,8 +1,8 @@
 import sequelize from "../config/database.js";
 import admin from "./admin_user.js";
 import client from "./client_user.js";
-import Hotel from "./Hotel.js";
-import Room from "./Room.js";
+import Hotel from "./hotel.js";
+import Room from "./room.js";
 import Booking from "./Booking.js";
 import "./helpers/associations.js";
 

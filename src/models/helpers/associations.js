@@ -1,5 +1,5 @@
-import Hotel from "../Hotel.js";
-import Room from "../Room.js";
+import Hotel from "../hotel.js";
+import Room from "../room.js";
 import Booking from "../Booking.js";
 import ClientUser from "../client_user.js";
 import AdminUser from "../admin_user.js";

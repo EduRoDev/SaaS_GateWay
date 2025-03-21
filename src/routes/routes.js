@@ -1,6 +1,8 @@
 import express from "express";
 import ClientController from "../controllers/client_controller.js";
 import AdminController from "../controllers/admin_controller.js";
+import HotelController from "../controllers/hotel_controller.js";
+import RoomController from "../controllers/room_controller.js";
 
 const router = express.Router();
 
@@ -48,6 +50,58 @@ router.put("/admins/:id", (req, res) =>
 );
 router.delete("/admins/:id", (req, res) =>
   new AdminController().deleteAdmin(req, res)
+);
+
+//Hotel-Admin routes
+router.get("/hotels", (req, res) =>
+  new HotelController().findAll(req, res)
+);
+router.get("/hotels/:id", (req, res) =>
+  new HotelController().findById(req, res)
+);
+router.get("/hotels/name/:name", (req, res) =>
+  new HotelController().findByName(req, res)
+);
+router.post("/hotels", (req, res) =>
+  new HotelController().create(req, res)
+);
+router.put("/hotels/:id", (req, res) =>
+  new HotelController().update(req, res)
+);
+router.delete("/hotels/:id", (req, res) =>
+  new HotelController().delete(req, res)
+);
+
+//Hotel-Rooms routes
+router.get("/rooms", (req, res) =>
+  new RoomController().findAll(req, res)
+);
+router.get("/rooms/:id", (req, res) =>
+  new RoomController().findById(req, res)
+);
+router.get("/rooms/name/:name", (req, res) =>
+  new RoomController().findByName(req, res)
+);
+router.get("/rooms/price/:price", (req, res) =>
+  new RoomController().findByPrice(req, res)
+);
+router.get("/rooms/type/:type", (req, res) =>
+  new RoomController().findByType(req, res)
+);
+router.get("/rooms/capacity/:capacity", (req, res) =>
+  new RoomController().findByCapacity(req, res)
+);
+router.get("/rooms/available/:available", (req, res) =>
+  new RoomController().findByAvailable(req, res)
+);
+router.post("/rooms", (req, res) =>
+  new RoomController().create(req, res)
+);
+router.put("/rooms/:id", (req, res) =>
+  new RoomController().update(req, res)
+);
+router.delete("/rooms/:id", (req, res) =>
+  new RoomController().delete(req, res)
 );
 
 export default router;
